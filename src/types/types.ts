@@ -1,14 +1,13 @@
-export interface children {
+export interface LayoutProps {
     children: React.ReactNode
 }
 
-export interface drawerProps {
-    drawerOpen: boolean,
-    handleDrawerToggle: () => void,
-    navItems: string[]
+export interface DrawerProps {
+    drawerOpen?: boolean,
+    handleDrawerToggle?: () => void,
+    navItems?: string[]
 }
 
-export interface headerProps {
+export interface HeaderProps {
     handleDrawerToggle: () => void;
-    navItems: string[]
 }

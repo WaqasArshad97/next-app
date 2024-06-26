@@ -1,81 +1,53 @@
-import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import IconButton from "@mui/material/IconButton";
+import React from "react";
+import { AppBar, Toolbar, IconButton, Typography, Button, Box } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import { headerProps } from "@/types/types";
+import { HeaderProps } from "@/types/types";
 
-export default function Header({ handleDrawerToggle, navItems }: headerProps) {
+const Header: React.FC<HeaderProps> = ({ handleDrawerToggle }) => {
   return (
-    <AppBar sx={{ backgroundColor: "black" }} position="sticky" component="nav">
+    <AppBar sx={{ background: "#3AAFA9" }} position="fixed">
       <Toolbar
-      sx={{
-        display: 'flex',
-        alignItems: "center",
-        justifyContent: "space-between"
-      }}
+        sx={{
+          display: 'flex',
+          alignItems: "center",
+          justifyContent: "space-between"
+        }}
       >
-        <Typography
-          variant="h6"
-          component="div"
-        >
-          LOGO
-        </Typography>
         <Box
-          sx={{
-            display: {
-              xs: "none",
-              sm: "none",
-              md: "block"
-            },
-          }}
+        sx={{
+          display: "flex",
+          alignItems: "center"
+        }}
         >
-          {navItems?.map((item) => (
-            <Button
-              key={item}
-              sx={{
-                color: "#fff",
-              }}
-            >
-              {item}
-            </Button>
-          ))}
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { md: "none" } }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" noWrap component="div">
+            LOGO
+          </Typography>
         </Box>
+
         <Button
           variant="contained"
           sx={{
-            backgroundColor: "#fff",
+            backgroundColor: "#DEF2F1",
             color: "black",
             "&:hover": {
-              backgroundColor: "#fff",
-            },
-            display: {
-              xs: "none",
-              sm: "block",
+              backgroundColor: "#DEF2F1",
             },
           }}
         >
           Login
         </Button>
-        <IconButton
-          onClick={handleDrawerToggle}
-          sx={{
-            mr: 2,
-            display: {
-              sm: "none",
-            },
-          }}
-        >
-          <MenuIcon
-            sx={{
-              color: "#fff",
-            }}
-          />
-        </IconButton>
       </Toolbar>
     </AppBar>
   );
-}
+};
+
+export default Header;
