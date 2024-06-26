@@ -11,3 +11,31 @@ export interface DrawerProps {
 export interface HeaderProps {
     handleDrawerToggle: () => void;
 }
+
+export interface Post {
+    id: number;
+    title: string;
+    body: string;
+    tags: string[];
+    reactions: {
+        likes: number;
+        dislikes: number;
+    };
+    views: number;
+    userId: number;
+}
+
+export interface PostCardProps {
+    post: Post;
+}
+
+export interface UseFetchProps {
+    url?: any;
+    options?: RequestInit;
+}
+
+export interface UseFetchResponse<T> {
+    data: T | null;
+    loading: boolean;
+    error: string | null;
+}

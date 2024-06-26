@@ -14,13 +14,23 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   return (
     <>
-      <Box sx={{ display: "flex" }}>
+      <Box
+        sx={{
+          display: "flex",
+        }}
+      >
         <Header handleDrawerToggle={handleDrawerToggle} />
         <ResponsiveDrawer
           drawerOpen={openDrawer}
           handleDrawerToggle={handleDrawerToggle}
         />
-        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+        <Box
+          component="main"
+          sx={{
+            flexGrow: 1,
+            p: 3,
+          }}
+        >
           <Toolbar />
           {children}
         </Box>

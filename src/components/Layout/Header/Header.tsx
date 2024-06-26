@@ -5,7 +5,14 @@ import { HeaderProps } from "@/types/types";
 
 const Header: React.FC<HeaderProps> = ({ handleDrawerToggle }) => {
   return (
-    <AppBar sx={{ background: "#3AAFA9" }} position="fixed">
+    <AppBar
+    sx={{ 
+      background: "#3AAFA9", 
+      border: "none",
+      boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1)"
+    }} 
+    position="fixed"
+    >
       <Toolbar
         sx={{
           display: 'flex',

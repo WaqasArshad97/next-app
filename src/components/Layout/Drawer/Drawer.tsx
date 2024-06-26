@@ -41,9 +41,9 @@ const ResponsiveDrawer: React.FC<DrawerProps> = ({
           <ListItem key={item.text} disablePadding>
             <ListItemButton>
               <ListItemIcon
-              sx={{
-                color: "#3AAFA9" 
-              }}
+                sx={{
+                  color: "#3AAFA9"
+                }}
               >
                 {item.icon}
               </ListItemIcon>
@@ -60,6 +60,9 @@ const ResponsiveDrawer: React.FC<DrawerProps> = ({
       <Drawer
         variant="permanent"
         sx={{
+          border: "none",
+          boxShadow:
+            "0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 1px 20px 0 rgba(0, 0, 0, 0.1)",
           zIndex: -1,
           display: {
             xs: "none",
