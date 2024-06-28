@@ -1,5 +1,5 @@
 import React from "react";
-import { AppBar, Toolbar, IconButton, Typography, Button, Box } from "@mui/material";
+import { AppBar, Toolbar, IconButton, Typography, Button, Box, Link } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { HeaderProps } from "@/types/types";
 
@@ -40,9 +40,12 @@ const Header: React.FC<HeaderProps> = ({ handleDrawerToggle }) => {
           </Typography>
         </Box>
 
-        <Button
-          variant="contained"
+        <Link
+          component={Button}
+          href={'/auth/signin'}
           sx={{
+            paddingX: "18px",
+            textDecoration: "none",
             backgroundColor: "#DEF2F1",
             color: "black",
             "&:hover": {
@@ -51,7 +54,7 @@ const Header: React.FC<HeaderProps> = ({ handleDrawerToggle }) => {
           }}
         >
           Login
-        </Button>
+        </Link>
       </Toolbar>
     </AppBar>
   );
